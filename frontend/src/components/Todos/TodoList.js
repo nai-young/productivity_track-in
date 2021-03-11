@@ -1,5 +1,6 @@
 import React from 'react'
-import '../../App.css'
+import '../../styles/todos.css'
+import '../../styles/app.css'
 import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'

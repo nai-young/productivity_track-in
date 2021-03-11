@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/app.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
@@ -17,31 +17,27 @@ function App() {
       <Header/>
       <Sidebar/>
       <div className='App'>
-        
-      <Card className='card-pomodoro'>
+        <Card className='card-pomodoro'>
           <h2>Pomodoro Timer</h2>
           <Pomodoro />
         </Card>
         <Card className="card-todo">
-            <Card.Body>
-              <h2>To-do</h2>
-              <Card.Text>
-                <Route exact path="/" component={AddTodo}/>
-                <Route exact path="/" component={Todo}/>
-                <Route exact path="/todoedit/:id" component={EditTodo}/>
-              </Card.Text>
-            </Card.Body>
+          <Card.Body>
+            <h2>To-do</h2>
+            <Card.Text>
+              <Route exact path="/" component={AddTodo}/>
+              <Route exact path="/" component={Todo}/>
+              <Route exact path="/todoedit/:id" component={EditTodo}/>
+            </Card.Text>
+          </Card.Body>
         </Card>
         <Card className='card-notes'>
           <h2>Notes</h2>
           <Notes />
         </Card> 
-        
-        
-        
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;

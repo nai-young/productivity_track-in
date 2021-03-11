@@ -1,0 +1,21 @@
+.card-pomodoro {
+  width: 50%;
+  height: 48%;
+  box-shadow: 0px 2px 5px 0px rgba(19, 68, 203, 0.14), 
+        0px 1px 10px 0px rgba(0,0,0,0.12), 
+        0px 2px 4px -1px rgba(0,0,0,0.2);
+  border: none !important;
+  position: relative;
+  float: left;
+}
+.pomodoro-timer {
+  display: flex;
+  justify-content: space-around;
+}
+.pomodoro-timer > section {
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 3px;
+  margin: .5rem;
+  text-align: center;
+  padding: .5rem;
+}
