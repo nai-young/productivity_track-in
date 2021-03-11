@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import AddTodo from './AddTodo'
 import TodoList from './TodoList'
+import EditTodo from './EditTodo'
 
 class Todo extends Component {
   constructor(props) {
@@ -33,9 +35,13 @@ class Todo extends Component {
   render () {
     let { todos } = this.state
     return (
-      <div>
-        <TodoList todos={ todos } removeTodo={ this.removeTodo }/>
-      </div>
+      <section className="card-todo">
+        <h2>To-Do</h2>
+        <section>
+          <AddTodo/>
+          <TodoList todos={ todos } removeTodo={ this.removeTodo }/>
+        </section>
+      </section>
     )
   }
 }

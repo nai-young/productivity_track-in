@@ -18,6 +18,9 @@ class Pomodoro extends Component {
     this.onDownBreak = this.onDownBreak.bind(this)
     this.onUpDuration = this.onUpDuration.bind(this)
     this.onDownDuration = this.onDownDuration.bind(this)
+    this.onUpdateSessionMinutes = this.onUpdateSessionMinutes.bind(this)
+    this.onToggle = this.onToggle.bind(this)
+    this.onReloadTimer = this.onReloadTimer.bind(this)
   }
 
   onUpBreak() {
@@ -50,14 +53,46 @@ class Pomodoro extends Component {
       }
     })
   }
+  onUpdateSessionMinutes() {
+    this.setState(prevState => {
+      return {
+        sessionMinutes: prevState.sessionMinutes - 1
+      }
+    })
+  }
+  onToggle(session) {
+    if(session) {
+      this.setState({
+        sessionMinutes: this.state.durationTime
+      })
+    } else {
+      this.setState({
+        sessionMinutes: this.state.breakTime
+      })
+    }
+  }
+  onReloadTimer() {
+    this.setState({
+      sessionMinutes: this.state.durationTime
+    })
+  }
 
   render () {
     return (
-      <div className='pomodoro-timer'>
-        <Timer sessionMinutes={this.state.sessionMinutes}/>
-        <DurationTime durationTime={this.state.durationTime} onUpDuration={this.onUpDuration} onDownDuration={this.onDownDuration}/>
-        <BreakTime breakTime={this.state.breakTime} onUpBreak={this.onUpBreak} onDownBreak={this.onDownBreak}/>
-      </div>
+      <section className='card-pomodoro'>
+        <h2>Pomodoro</h2>
+        <section className='pomodoro-timer'>
+          <Timer
+            sessionMinutes={this.state.sessionMinutes}
+            breakTime={this.state.breakTime}
+            onUpdateSessionMinutes={this.onUpdateSessionMinutes}
+            onToggle={this.onToggle}
+            onReloadTimer={this.onReloadTimer}
+          />
+          <DurationTime durationTime={this.state.durationTime} onUpDuration={this.onUpDuration} onDownDuration={this.onDownDuration}/>
+          <BreakTime breakTime={this.state.breakTime} onUpBreak={this.onUpBreak} onDownBreak={this.onDownBreak}/>
+        </section>
+      </section>
     )
   }
 }

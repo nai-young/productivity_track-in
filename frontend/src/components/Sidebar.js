@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/app.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,11 +11,11 @@ class Sidebar extends Component {
     return (
       <div className='sidebar'>
         <ul>
-          <li><FontAwesomeIcon icon={faTachometerAlt} className="icon-sidebar"/></li>
-          <li><FontAwesomeIcon icon={faCalendarAlt} className="icon-sidebar"/></li>
-          <li><FontAwesomeIcon icon={faClock} className="icon-sidebar"/></li>
-          <li><FontAwesomeIcon icon={faCoffee} className="icon-sidebar"/></li>
-          <li><FontAwesomeIcon icon={faEnvelope} className="icon-sidebar"/></li>
+          <li><Link to='/'><FontAwesomeIcon icon={faTachometerAlt} className="icon-sidebar"/></Link></li>
+          <li><Link to='/calendar'><FontAwesomeIcon icon={faCalendarAlt} className="icon-sidebar"/></Link></li>
+          <li><Link to='/tracker'><FontAwesomeIcon icon={faClock} className="icon-sidebar"/></Link></li>
+          <li><Link to='/support'><FontAwesomeIcon icon={faCoffee} className="icon-sidebar"/></Link></li>
+          <li><Link to='/contact'><FontAwesomeIcon icon={faEnvelope} className="icon-sidebar"/></Link></li>
         </ul>
       </div>
     )

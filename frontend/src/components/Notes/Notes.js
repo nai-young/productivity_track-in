@@ -5,9 +5,9 @@ import '../../styles/app.css'
 class Notes extends Component {
   render () {
     return (
-      <div>
-        HERE
-      </div>
+      <section className='card-notes'>
+        <h2>Notes</h2>
+      </section>
     )
   }
 }
