@@ -1,53 +1,105 @@
 const express = require('express')
 const router = express.Router()
 const Todo = require('../models/Todo')
+const { check, validationResult } = require('express-validator')
+
+// @route   GET /
+// @desc    Get all todos
+// @access  Public
 
 router.get('/', async (req, res) => {
-  const todos = await Todo.find()
-  res.json(todos)
-})
-router.get('/:id', async (req, res) => {
-  const todo = await Todo.findById(req.params.id)
-  if (!todo) {
-    return res.status(404).send('Todo not found')
-  }
-  res.json(todo)
-})
-router.post('/', async (req, res) => {
   try {
-    const todo = new Todo({
-      title: req.body.title,
-      priority: req.body.priority,
-    })
-    await todo.save()
-    res.send(todo)
-  } catch (error) {
-    res.status(500).send('Server error: ' + error.message)
-  }
-})
-router.put('/todoedit/:id', async (req, res) => {
-  try {
-    const todo = await Todo.findById(req.params.id)
-    if(!todo) {
-      return res.status(404).send('Todo not found')
+    const todos = await Todo.find({})
+    if (!todos) {
+      return res.status(400).json({ msg: 'No todos found' })
     }
-    await Todo.findByIdAndUpdate(req.params.id, req.body)
-    const updatedTodo = await Todo.findById(req.params.id)
-    res.json(updatedTodo)
-  } catch (error) {
-    res.status(500).send('Server error: ' + error.message)
+    res.json(todos)
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send('Server Error')
   }
 })
-router.delete('/:id', async (req, res) => {
+
+// @route   GET /:todo_id
+// @desc    Get todo by id
+// @access  Public
+
+router.get('/:todo_id', async (req, res) => {
+  try {
+    const todo = await Todo.findOne({ user: req.params.id })
+    if (!todo) {
+      return res.status(400).json({ msg: 'Todo not found' })
+    }
+    res.json(todo)
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send('Server Error')
+  }
+})
+
+// @route   POST /
+// @desc    Create new todo
+// @access  Public
+
+router.post('/', [
+  check('title', 'Todo title is required').not().isEmpty()
+], async (req, res) => {
+  const errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() })
+  }
+  const {
+    title,
+    priority
+  } = req.body
+  const newTodo = {}
+  if (title) newTodo.title = title
+  if (priority) newTodo.priority = priority
+  try {
+    const todo = new Todo(newTodo)
+    await todo.save()
+    res.json(todo)
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send('Server Error')
+  }
+})
+
+// @route   PUT /:todo_id
+// @desc    Update todo by id
+// @access  Public
+
+router.put('/:todo_id', async (req, res) => {
+  try {
+    const todo = await Todo.findById(req.params.todo_id)
+    if (!todo) {
+      return res.status(400).json({ msg: 'Todo not found.' })
+    }
+    await Todo.findByIdAndUpdate(req.params.todo_id, req.body)
+    const updatedTodo = await Todo.findById(req.params.todo_id)
+    console.log(updatedTodo)
+    res.json(updatedTodo)
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send('Server Error')
+  }
+})
+
+// @route   DELETE /:todo_id
+// @desc    Delete todo by id
+// @access  Public
+
+router.delete('/:todo_id', async (req, res) => {
   try {
     const todo = await Todo.findById(req.params.id)
-    if(!todo) {
-      return res.status(404).send('Todo not found')
+    if (!todo) {
+      return res.status(400).json({ msg: 'No todo found' })
     }
     await todo.delete()
-    res.send('Todo deleted')
-  } catch (error) {
-    res.status(500).send('Server error: ' + error.message)
+    res.json({ msg: 'Todo deleted' })
+  } catch (err) {
+    console.error(err.message)
+    res.status(500).send('Server Error')
   }
 })
 

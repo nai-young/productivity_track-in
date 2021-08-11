@@ -17,13 +17,14 @@ if (process.env.NODE_ENV === 'production') {
   }); */
 }
 
-app.use(cors())
+// app.use(cors())
 // parse requests of content-type - application/json
-app.use(express.json())
+// app.use(express.json())
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }))
+// app.use(express.urlencoded({ extended: true }))
+app.use(express.json({ extended: false }))
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   res.setHeader('Content-Type', 'text/html')
   res.header(
     'Access-Control-Allow-Headers',
@@ -34,7 +35,7 @@ app.use((req, res, next) => {
     'http://clientscrud.herokuapp.com'
   )
   next()
-})
+}) */
 
 app.use('/todos/', todoRouter)
 app.use('/notes/', noteRouter)
