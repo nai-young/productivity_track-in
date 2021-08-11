@@ -4,8 +4,18 @@ const noteRouter = require('./routes/note')
 const app = express()
 const cors = require('cors')
 const connectDB = require('./db')
+const path = require('path')
 
 require('dotenv').config()
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, '..', '/frontend/build')))
+  // Handle React routing, return all requests to React app
+  /* app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '..', '/client/build', 'index.html'));
+  }); */
+}
 
 app.use(cors())
 // parse requests of content-type - application/json
