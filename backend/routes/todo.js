@@ -69,7 +69,7 @@ router.post('/', [
 // @desc    Update todo by id
 // @access  Public
 
-router.put('/:todo_id', async (req, res) => {
+router.put('/edit/:todo_id', async (req, res) => {
   try {
     const todo = await Todo.findById(req.params.todo_id)
     if (!todo) {
@@ -91,7 +91,7 @@ router.put('/:todo_id', async (req, res) => {
 
 router.delete('/:todo_id', async (req, res) => {
   try {
-    const todo = await Todo.findById(req.params.id)
+    const todo = await Todo.findById(req.params.todo_id)
     if (!todo) {
       return res.status(400).json({ msg: 'No todo found' })
     }

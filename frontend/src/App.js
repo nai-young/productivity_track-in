@@ -19,11 +19,10 @@ function App() {
       <div className='App'>
         <Route exact path="/" component={Pomodoro}/>
         <Route exact path="/" component={Todo}/>
-        <Route exact path="/todoedit/:id" component={EditTodo}/>
+        <Route exact path="/edit/:todo_id" component={EditTodo}/>
         <Route exact path="/" component={Notes}/>
         <Route path="/calendar" component={Calendar}/>
         <Route path="/tracker" component={Tracker}/>
-
       </div>
     </Router>
   )

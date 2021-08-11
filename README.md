@@ -11,13 +11,13 @@
 
 [![Twitter](https://img.shields.io/twitter/follow/naiche_young.svg?style=social&label=@naiche_young)](https://twitter.com/:naiche_young)
 
-> Full Stack Application
+> Productivity All-In One Dashboard- Full Stack Application
 >
->Built in:  React, Node, MongoDB, Express, Bootstrap
+> Built in  React, Node, MongoDB, Express, Bootstrap
 >
 > Upcoming Features:
 >
-> - Auth Login (each user its own account)
+> - Authentication Login
 >
 > - Tracking Time
 >
@@ -42,19 +42,19 @@ npm install
 ### Run Frontend & Backend
 
 ```sh
-npn run dev
+npm run dev
 ```
 
 ### Run Frontend
 
 ```sh
-npn run frontend
+npm run frontend
 ```
 
 ### Run Backend
 
 ```sh
-npn run backend
+npm run backend
 ```
 
 ## Run tests
@@ -86,5 +86,5 @@ Give a ⭐️ if this you liked this project!
 
 ---
 
-Copyright © 2021 [Naiche L. Young](https://github.com/nai-young).<br />
+Copyright © 2021 [Naiche L. Young](https://naicheyoung.com).<br />
 This project is [GNU GPLv3](./LICENSE) licensed.
