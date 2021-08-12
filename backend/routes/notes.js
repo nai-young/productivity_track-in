@@ -52,6 +52,17 @@ router.put('/noteedit/:note_id', async (req, res) => {
   res.json(note)
 })
 
-// TODO - Add remove notes
+// @route   DELETE /:note_id
+// @desc    Delete note
+// @access  Public
+
+router.delete('/:note_id', async (req, res) => {
+  const note = await Note.findById(req.params.note_id)
+  if (!note) {
+    return res.status(400).json({ msg: 'Note not found' })
+  }
+  await note.delete()
+  res.json({ msg: 'Note deleted' })
+})
 
 module.exports = router

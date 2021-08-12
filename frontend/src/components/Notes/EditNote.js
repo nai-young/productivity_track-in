@@ -42,7 +42,7 @@ export default class EditNote extends Component {
         console.log('Note updated: ', res.data)
       })
       .catch(error => console.error('Server error: ' + error.message))
-    window.location = "/"
+    window.location = `/notes/${this.props.match.params.note_id}`
   }
   
   render() {
@@ -55,9 +55,7 @@ export default class EditNote extends Component {
           <label for="description">Description</label>
           <input type="textarea" required value={this.state.description} id="description" onChange={this.onChangeDesc}/>
           <button type="submit">Save</button>
-          <Link to={`/notes/${this.props.match.params.note_id}`}>
-            Back
-          </Link>
+          <Link to={`/notes/${this.props.match.params.note_id}`}>Back</Link>
         </form>
       </>
     )

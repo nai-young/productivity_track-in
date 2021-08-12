@@ -21,7 +21,14 @@ export default class DisplayNote extends Component {
     })
     .catch(err => console.error(err.message))
   }
-
+  deleteNote = () => {
+    axios.delete(`/notes/${this.props.match.params.note_id}`)
+      .then(
+        console.log('Note deleted')
+      )
+      .catch(err => console.error(err.message))
+    window.location = "/"
+  }
   render() {
     const note = {
       title: this.state.title,
@@ -32,7 +39,9 @@ export default class DisplayNote extends Component {
         <h1>Note</h1>
         <p>Title: {note.title}</p>
         <p>Description: {note.description}</p>
-        <Link to={`/notes/noteedit/${this.props.match.params.note_id}`}>Edit Note</Link>
+        <button><Link to={`/notes/noteedit/${this.props.match.params.note_id}`}>Edit Note</Link></button>
+        <button onClick={this.deleteNote}>Delete Note</button>
+        <button><Link to={'/'}>Home</Link></button>
       </div>
     )
   }
