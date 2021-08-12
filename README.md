@@ -11,7 +11,7 @@
 
 [![Twitter](https://img.shields.io/twitter/follow/naiche_young.svg?style=social&label=@naiche_young)](https://twitter.com/:naiche_young)
 
-> Productivity All-In One Dashboard- Full Stack Application
+> Productivity All-In One Dashboard - Full Stack Application
 >
 > Built in  React, Node, MongoDB, Express, Bootstrap
 >

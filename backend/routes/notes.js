@@ -3,7 +3,7 @@ const router = express.Router()
 const Note = require('../models/Note')
 
 router.get('/', async (req, res) => {
-  const notes = await Note.find()
+  const notes = await Note.find({})
   res.json(notes)
 })
 
@@ -19,4 +19,9 @@ router.post('/', async (req, res) => {
     res.status(500).send('Server error: ' + err.message)
   }
 })
+
+// TODO - Add update notes
+
+// TODO - Add remove notes
+
 module.exports = router

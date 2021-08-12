@@ -6,7 +6,8 @@ const todoSchema = mongoose.Schema({
     required: true
   },
   priority: {
-    type: String
+    type: String,
+    required: true
   }
 })
 

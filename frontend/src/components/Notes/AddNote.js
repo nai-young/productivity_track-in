@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class AddNote extends Component {
   constructor(props) {
@@ -9,15 +10,6 @@ class AddNote extends Component {
       description: ''
     }
   }
-  handleSubmit = (e) => {
-    e.preventDefault()
-    const note = {
-      title: this.state.title,
-      description: this.state.description
-    }
-    console.log(note)
-    // window.location = '/'
-  }
   onChangeTitle = (e) => {
     this.setState({
       title: e.target.value
@@ -27,6 +19,20 @@ class AddNote extends Component {
     this.setState({
       description: e.target.value
     })
+  }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const note = {
+      title: this.state.title,
+      description: this.state.description
+    }
+    console.log(note)
+    axios.post('/notes/', note)
+      .then(res => {
+        console.log('Note created: ', res.data)
+      })
+      .catch(error => console.error('Server error: ' + error.message))
+    window.location = '/'
   }
   render () {
     return (

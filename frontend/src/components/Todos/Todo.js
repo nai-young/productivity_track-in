@@ -3,7 +3,6 @@ import axios from 'axios'
 
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
-import EditTodo from './EditTodo'
 
 class Todo extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class Todo extends Component {
   getTodo = () => {
     axios.get('/todos/')
         .then(res => {
-          console.log(res.data)
           this.setState({ todos: res.data })
         })
         .catch(error => console.error('Server error: ' + error.message))

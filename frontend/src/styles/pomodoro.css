@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 20px;
+  background-color: var(--lightgrey);
 }
 .card-pomodoro  h2 {
   margin-bottom: 0 ;

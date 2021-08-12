@@ -43,8 +43,9 @@ class AddTodo extends Component {
         <Form.Control type="text" required value={this.state.title} onChange={this.onChangeTitle}/>
         <Form.Control as='select' custom value={this.state.priority} onChange={this.onChangePriority}>
           <option>Select...</option>
-          <option>Urgent</option>
+          <option>Low</option>
           <option>Medium</option>
+          <option>Urgent</option>
         </Form.Control>
         <Button type="submit" variant='primary'>Add Todo</Button>
       </form>

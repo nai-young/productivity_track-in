@@ -42,7 +42,8 @@ router.get('/:todo_id', async (req, res) => {
 // @access  Public
 
 router.post('/', [
-  check('title', 'Todo title is required').not().isEmpty()
+  check('title', 'Todo title is required').not().isEmpty(),
+  check('priority', 'Priority is required').not().isEmpty()
 ], async (req, res) => {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
@@ -65,7 +66,7 @@ router.post('/', [
   }
 })
 
-// @route   PUT /:todo_id
+// @route   PUT /edit/:todo_id
 // @desc    Update todo by id
 // @access  Public
 

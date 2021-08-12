@@ -41,7 +41,7 @@ class EditTodo extends Component {
       priority: this.state.priority
     }
 
-    axios.put('/todos/todoedit/' + this.props.match.params.id, todo)
+    axios.put('/todos/edit/' + this.props.match.params.id, todo)
       .then(res => {
         console.log('Todo updated: ' + res.data)
       })
@@ -58,14 +58,15 @@ class EditTodo extends Component {
           <Form.Control type="text" required value={this.state.title} onChange={this.onChangeTitle} />
           <Form.Control as='select' value={this.state.priority} onChange={this.onChangePriority}>
             <option>Select...</option>
-            <option>Urgent</option>
+            <option>Low</option>
             <option>Medium</option>
+            <option>Urgent</option>
           </Form.Control>
           <div className="form-group">
-            <Button type="submit">Edit</Button>
+            <Button type="submit">Save</Button>
           </div>
         </form>
-        <Link to={'/'}><Button>Home</Button></Link>
+        <Link to={'/'}><Button>Cancel</Button></Link>
       </div>
     )
   }

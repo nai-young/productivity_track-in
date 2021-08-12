@@ -8,4 +8,6 @@
   border: none !important;
   position: relative;
   float: left;
+  border-radius: 20px;
+  background-color: var(--lightgrey);
 }

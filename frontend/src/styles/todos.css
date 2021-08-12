@@ -6,6 +6,8 @@
   border: none !important;
   float: right;
   height: 96%;
+  border-radius: 20px;
+  background-color: var(--lightgrey);
 }
 .todos-container {
   display: flex;
