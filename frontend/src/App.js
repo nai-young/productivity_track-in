@@ -10,6 +10,8 @@ import Pomodoro from './components/Pomodoro/Pomodoro'
 import Notes from './components/Notes/Notes'
 import Calendar from './components/Calendar/Calendar'
 import Tracker from './components/Tracker/Tracker'
+import DisplayNote from './components/Notes/DisplayNote'
+import EditNote from './components/Notes/EditNote'
 
 function App() {
   return (
@@ -19,8 +21,10 @@ function App() {
       <div className='App'>
         <Route exact path="/" component={Pomodoro}/>
         <Route exact path="/" component={Todo}/>
-        <Route exact path="/edit/:todo_id" component={EditTodo}/>
+        <Route exact path="/todoedit/:todo_id" component={EditTodo}/>
         <Route exact path="/" component={Notes}/>
+        <Route exact path="/notes/:note_id" component={DisplayNote}/>
+        <Route exact path="/notes/noteedit/:note_id" component={EditNote}/>
         <Route path="/calendar" component={Calendar}/>
         <Route path="/tracker" component={Tracker}/>
       </div>

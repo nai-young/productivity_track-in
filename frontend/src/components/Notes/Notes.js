@@ -7,7 +7,7 @@ import axios from 'axios'
 class Notes extends Component {
   constructor(props) {
     super(props)
-    this.status = {
+    this.state = {
       notes: []
     }
   }
@@ -19,7 +19,7 @@ class Notes extends Component {
       .then(res => {
         this.setState({ notes: res.data })
       })
-      .catch(error => console.error('Server error: ' + error.message))
+      .catch(error => console.error(error.message))
   }
   render () {
     let { notes } = this.state

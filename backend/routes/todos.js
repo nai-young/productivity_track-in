@@ -25,16 +25,11 @@ router.get('/', async (req, res) => {
 // @access  Public
 
 router.get('/:todo_id', async (req, res) => {
-  try {
-    const todo = await Todo.findOne({ user: req.params.id })
-    if (!todo) {
-      return res.status(400).json({ msg: 'Todo not found' })
-    }
-    res.json(todo)
-  } catch (err) {
-    console.error(err.message)
-    res.status(500).send('Server Error')
+  const todo = await Todo.findById(req.params.todo_id)
+  if (!todo) {
+    return res.status(400).json({ msg: 'Todo not found' })
   }
+  res.json(todo)
 })
 
 // @route   POST /
@@ -66,24 +61,17 @@ router.post('/', [
   }
 })
 
-// @route   PUT /edit/:todo_id
+// @route   PUT /todoedit/:todo_id
 // @desc    Update todo by id
 // @access  Public
 
-router.put('/edit/:todo_id', async (req, res) => {
-  try {
-    const todo = await Todo.findById(req.params.todo_id)
-    if (!todo) {
-      return res.status(400).json({ msg: 'Todo not found.' })
-    }
-    await Todo.findByIdAndUpdate(req.params.todo_id, req.body)
-    const updatedTodo = await Todo.findById(req.params.todo_id)
-    console.log(updatedTodo)
-    res.json(updatedTodo)
-  } catch (err) {
-    console.error(err.message)
-    res.status(500).send('Server Error')
+router.put('/todoedit/:todo_id', async (req, res) => {
+  const todo = await Todo.findById(req.params.todo_id)
+  if (!todo) {
+    return res.status(400).json({ msg: 'Todo not found.' })
   }
+  await Todo.findByIdAndUpdate(req.params.todo_id, req.body)
+  res.json(todo)
 })
 
 // @route   DELETE /:todo_id

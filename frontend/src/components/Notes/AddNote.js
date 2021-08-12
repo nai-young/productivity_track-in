@@ -26,10 +26,9 @@ class AddNote extends Component {
       title: this.state.title,
       description: this.state.description
     }
-    console.log(note)
     axios.post('/notes/', note)
       .then(res => {
-        console.log('Note created: ', res.data)
+        console.log('Note created: ', res.data.title)
       })
       .catch(error => console.error('Server error: ' + error.message))
     window.location = '/'
@@ -39,6 +38,7 @@ class AddNote extends Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <input type='text'
+          required
             value={this.state.title}
             placeholder='Title'
             onChange={this.onChangeTitle}/>

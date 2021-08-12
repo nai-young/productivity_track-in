@@ -15,7 +15,7 @@ class EditTodo extends Component {
 
   }
   componentDidMount() {
-    axios.get('/todos/' + this.props.match.params.id)
+    axios.get('/todos/' + this.props.match.params.todo_id)
       .then(res => {
         this.setState({
           title: res.data.title,
@@ -41,7 +41,7 @@ class EditTodo extends Component {
       priority: this.state.priority
     }
 
-    axios.put('/todos/edit/' + this.props.match.params.id, todo)
+    axios.put('/todos/todoedit/' + this.props.match.params.todo_id, todo)
       .then(res => {
         console.log('Todo updated: ' + res.data)
       })

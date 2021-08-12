@@ -15,7 +15,7 @@ const TodoList = ({todos, removeTodo }) => {
               <ListGroup.Item onClick={() => removeTodo(todo._id)} className="todo-item">
                 {todo.title} | {todo.priority}
               </ListGroup.Item>
-              <Link to={'/edit/' + todo._id }><Button>Edit</Button></Link>
+              <Link to={'/todoedit/' + todo._id }><Button>Edit</Button></Link>
             </div>
           )
         }) 
