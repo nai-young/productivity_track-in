@@ -40,14 +40,29 @@ class AddTodo extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit} className="todos-container mt-3 mb-3 flex justify-between">
-        <input type="text" className='w-1/2 px-3' required value={this.state.title} onChange={this.onChangeTitle}/>
-        <select className='w-30 px-3' value={this.state.priority} onChange={this.onChangePriority}>
+        <input 
+          type="text" 
+          className='w-1/2 px-3 rounded-md placeholder-gray-500 text-gray-500 border border-gray-200'
+          required
+          placeholder='Enter title...'
+          value={this.state.title}
+          onChange={this.onChangeTitle}
+        />
+        <select className='w-30 px-3 rounded-md text-gray-500 border border-gray-200'
+          value={this.state.priority}
+          onChange={this.onChangePriority}
+        >
           <option>Select...</option>
           <option>Low</option>
           <option>Medium</option>
           <option>Urgent</option>
         </select>
-        <button type="submit" className='w-1/6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-1.5 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Add Todo</button>
+        <button
+          type="submit"
+          className='w-1/6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-1.5 border-b-4 border-blue-700 hover:border-blue-500 rounded'
+        >
+          + New
+        </button>
       </form>
     )
   }
