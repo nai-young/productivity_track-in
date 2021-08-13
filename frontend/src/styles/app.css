@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 @font-face {
   font-family: Avenir;
@@ -17,7 +21,7 @@
   font-family: Avenir;
 }
 /* App */
-.App {
+/* .App {
   height: 95vh;
   width: 100vw;
   padding: 1.5rem 2rem 0 5rem;
@@ -26,7 +30,7 @@
   /* display: flex;
   justify-content: space-between;
   flex-wrap: wrap; */
-}
+
 
 /* Header */
 .header-container {

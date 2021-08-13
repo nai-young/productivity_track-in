@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+// import Form from 'react-bootstrap/Form'
 
 class AddTodo extends Component {
   constructor (props) {
@@ -39,15 +39,15 @@ class AddTodo extends Component {
   }
   render () {
     return (
-      <form onSubmit={this.handleSubmit} className="todos-container">
-        <Form.Control type="text" required value={this.state.title} onChange={this.onChangeTitle}/>
-        <Form.Control as='select' custom value={this.state.priority} onChange={this.onChangePriority}>
+      <form onSubmit={this.handleSubmit} className="todos-container mt-3 mb-3 flex justify-between">
+        <input type="text" className='w-1/2 px-3' required value={this.state.title} onChange={this.onChangeTitle}/>
+        <select className='w-30 px-3' value={this.state.priority} onChange={this.onChangePriority}>
           <option>Select...</option>
           <option>Low</option>
           <option>Medium</option>
           <option>Urgent</option>
-        </Form.Control>
-        <Button type="submit" variant='primary'>Add Todo</Button>
+        </select>
+        <button type="submit" className='w-1/6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-1.5 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Add Todo</button>
       </form>
     )
   }

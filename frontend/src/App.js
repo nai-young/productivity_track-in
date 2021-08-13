@@ -1,6 +1,6 @@
 import './styles/app.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Todo from './components/Todos/Todo'
 import EditTodo from './components/Todos/EditTodo'
@@ -18,7 +18,7 @@ function App() {
     <Router>
       <Header/>
       <Sidebar/>
-      <div className='App'>
+      <div className='m-0 w-screen h-95 pl-20 pt-6 pr-8 bg-gray-200'>
         <Route exact path="/" component={Pomodoro}/>
         <Route exact path="/" component={Todo}/>
         <Route exact path="/todoedit/:todo_id" component={EditTodo}/>

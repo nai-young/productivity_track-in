@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+// import Form from 'react-bootstrap/Form'
 
 class EditTodo extends Component {
   constructor(props) {
@@ -55,18 +55,18 @@ class EditTodo extends Component {
       <div>
         <h2>Edit Todo</h2>
         <form onSubmit={this.handleSubmit}>
-          <Form.Control type="text" required value={this.state.title} onChange={this.onChangeTitle} />
-          <Form.Control as='select' value={this.state.priority} onChange={this.onChangePriority}>
+          <input type="text" required value={this.state.title} onChange={this.onChangeTitle} />
+          <select value={this.state.priority} onChange={this.onChangePriority}>
             <option>Select...</option>
             <option>Low</option>
             <option>Medium</option>
             <option>Urgent</option>
-          </Form.Control>
+          </select>
           <div className="form-group">
-            <Button type="submit">Save</Button>
+            <button type="submit">Save</button>
           </div>
         </form>
-        <Link to={'/'}><Button>Cancel</Button></Link>
+        <Link to={'/'}><button>Cancel</button></Link>
       </div>
     )
   }

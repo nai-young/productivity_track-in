@@ -13,7 +13,7 @@
 
 > Productivity All-In One Dashboard - Full Stack Application
 >
-> Built in  React, Node, MongoDB, Express, Bootstrap
+> Built with React, Node, MongoDB, Express & TailwindCSS
 >
 > Upcoming Features:
 >
@@ -21,7 +21,7 @@
 >
 > - Tracking Time
 >
-> - Calendar
+> - Calendar tasks
 
 ### 🏠 [Homepage](https://github.com/nai-young/productivity_track-in)
 

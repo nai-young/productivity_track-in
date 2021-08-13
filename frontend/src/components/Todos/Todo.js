@@ -33,7 +33,7 @@ class Todo extends Component {
   render () {
     let { todos } = this.state
     return (
-      <section className="card-todo">
+      <section className='card-todo relative float-right flex flex-col rounded-lg shadow-lg w-45 h-full bg-gray-50'>
         <h2>To-Do</h2>
         <section>
           <AddTodo/>

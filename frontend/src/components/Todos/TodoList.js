@@ -1,27 +1,29 @@
 import React from 'react'
-import '../../styles/todos.css'
-import '../../styles/app.css'
+// import '../../styles/todos.css'
+// import '../../styles/app.css'
 import { Link } from 'react-router-dom'
-import ListGroup from 'react-bootstrap/ListGroup'
-import Button from 'react-bootstrap/Button'
+// import ListGroup from 'react-bootstrap/ListGroup'
+// import Button from 'react-bootstrap/Button'
 
 const TodoList = ({todos, removeTodo }) => {
   return (
-    <ListGroup>
+    <ul>
       {todos && todos.length > 0 ? (
         todos.map(todo => {
           return (
-            <div key={todo._id} className="todo-container">
-              <ListGroup.Item onClick={() => removeTodo(todo._id)} className="todo-item">
+            <div key={todo._id} className="todo-container flex w-full justify-between py-1">
+              <li onClick={() => removeTodo(todo._id)} className="todo-item w-88 hover:line-through cursor-pointer shadow-inner bg-gray-100 rounded-lg p-2 self-center">
                 {todo.title} | {todo.priority}
-              </ListGroup.Item>
-              <Link to={'/todoedit/' + todo._id }><Button>Edit</Button></Link>
+              </li>
+              <Link to={'/todoedit/' + todo._id } className='w-11'>
+                <button type="button" className='bg-blue-500 w-full hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Edit</button>
+              </Link>
             </div>
           )
         }) 
       ) : (<p>No todo(s) left</p>)
       } 
-    </ListGroup>
+    </ul>
   )
 }
 export default TodoList
