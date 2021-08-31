@@ -21,7 +21,7 @@
 >
 > - Tracking Time
 >
-> - Calendar tasks
+> - Calendar tasks & meetings
 
 ### 🏠 [Homepage](https://github.com/nai-young/productivity_track-in)
 
