@@ -6,7 +6,7 @@
   "scripts": {
     "frontend": "cd frontend && npm start",
     "backend": "cd backend/bin && nodemon www",
-    "test": "jest",
+    "test": "No test specified.",
     "dev": "concurrently --kill-others \"npm run backend\" \"npm run frontend\" ",
     "postinstall": "npm install --prefix ./backend && npm install --prefix ./frontend && npm run build --prefix ./frontend"
   },
@@ -20,7 +20,6 @@
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react": "^7.24.0",
-    "jest": "^27.1.0"
+    "eslint-plugin-react": "^7.24.0"
   }
 }

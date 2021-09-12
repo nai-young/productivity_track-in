@@ -42,17 +42,17 @@ class AddTodo extends Component {
       <form onSubmit={this.handleSubmit} className="todos-container mt-3 mb-3 flex justify-between">
         <input 
           type="text" 
-          className='w-1/2 px-3 rounded-md placeholder-gray-500 text-gray-500 border border-gray-200'
+          className='w-1/2 px-3 rounded-md placeholder-gray-500 text-gray-700 border border-gray-200'
           required
           placeholder='Enter title...'
           value={this.state.title}
           onChange={this.onChangeTitle}
         />
-        <select className='w-30 px-3 rounded-md text-gray-500 border border-gray-200'
+        <select className='w-30 px-3 rounded-md text-gray-700 border border-gray-200'
           value={this.state.priority}
           onChange={this.onChangePriority}
         >
-          <option>Select...</option>
+          <option>Priority...</option>
           <option>Low</option>
           <option>Medium</option>
           <option>Urgent</option>

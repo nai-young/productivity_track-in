@@ -18,7 +18,9 @@ module.exports = {
        },
        height: {
         sm: '90%',
-        '95': '95vh'
+        '95': '95vh',
+        '70': '70vh',
+        '50': '50vh'
        },
        borderWidth: {
         '0.5': '0.5px'

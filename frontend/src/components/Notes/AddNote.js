@@ -36,19 +36,19 @@ class AddNote extends Component {
   render () {
     return (
       <>
-        <form onSubmit={this.handleSubmit} className="todos-container mt-3 mb-3 flex justify-between">
+        <form onSubmit={this.handleSubmit} className="notes-container mt-3 mb-3 flex justify-between">
           <input type='text'
             required
             value={this.state.title}
-            className='w-2/6 px-3'
+            className='w-2/6 px-3 rounded-md placeholder-gray-500 text-gray-700 border border-gray-200'
             placeholder='Title'
             onChange={this.onChangeTitle}/>
           <input type='textarea'
             value={this.state.description}
-            className='w-45 px-3'
+            className='w-45 px-3 rounded-md placeholder-gray-500 text-gray-700 border border-gray-200'
             placeholder='Description'
             onChange={this.onChangeDescription}/>
-           <button type='submit' className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Add Note</button> 
+           <button type='submit' className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>+ Add Note</button> 
         </form>
       </>
     )

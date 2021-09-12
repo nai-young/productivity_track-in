@@ -7,8 +7,8 @@ const ListNotes = ({ notes }) => {
       {notes && notes.length > 0 ? (
         notes.map(note => {
           return (
-            <li key={note._id} className="w-full hover:underline cursor-pointer my-2 rounded-lg shadow-inner bg-gray-100 p-2 self-center">
-              <Link to={`/notes/${note._id}`}>{note.title}</Link>
+            <li key={note._id} className="w-full hover:underline cursor-pointer my-2 p-2 self-center text-gray-100">
+              ■ <Link to={`/notes/${note._id}`}>{note.title}</Link>
             </li>
           )
       })

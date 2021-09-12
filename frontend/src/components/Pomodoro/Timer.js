@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 // import Button from 'react-bootstrap/Button'
+import '../../styles/app.css'
 
 export default class Timer extends Component {
   constructor () {
@@ -67,11 +68,11 @@ export default class Timer extends Component {
   }
   render() {
     return (
-      <section className='session-card shadow-xl rounded-md self-center text-center p-2 min-w-30 h-sm flex justify-between flex-col align-center'>
+      <section className='session-card shadow-md rounded-md text-center p-2 min-w-30 h-full flex justify-between flex-col align-center'>
           <h3>
             {this.state.session === true ? 'Session' : 'Break'}
           </h3>
-        <div className='session-time bg-blue-100 p-1 rounded-full w-1/3 h-2/6 self-center flex justify-around items-center border-0.5 border-black rounded-md'>
+        <div className='session-time p-2 rounded-full h-16 self-center m-4 flex justify-between items-center border-0.5 border-blue-500 text-xl'>
           <span>
             {this.props.sessionMinutes}
           </span>
@@ -84,7 +85,7 @@ export default class Timer extends Component {
         </div>
         <div >
           <button onClick={this.startTimer} className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Start</button>
-          <button onClick={this.stopTimer} className='ml-1 mr-1 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Stop</button>
+          <button onClick={this.stopTimer} className='stop-btn l-1 mr-1 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Stop</button>
           <button onClick={this.reloadTimer} className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Reload</button>
         </div>
       </section>

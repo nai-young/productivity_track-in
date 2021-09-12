@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import Button from 'react-bootstrap/Button'
 // import Form from 'react-bootstrap/Form'
+import '../../styles/app.css'
 
 class EditTodo extends Component {
   constructor(props) {
@@ -52,21 +53,36 @@ class EditTodo extends Component {
 
   render () {
     return (
-      <div>
+      <div className="h-screen">
         <h2>Edit Todo</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" required value={this.state.title} onChange={this.onChangeTitle} />
-          <select value={this.state.priority} onChange={this.onChangePriority}>
+        <form onSubmit={this.handleSubmit} className="h-2/5 w-7/12 gap-2 m-auto p-10 flex justify-between flex-column flex-wrap">
+          <input 
+            type="text"
+            required
+            value={this.state.title}
+            onChange={this.onChangeTitle}
+            className='p-2 w-2/3 h-10  px-3 rounded-md placeholder-gray-500 text-gray-700 border border-gray-200'
+          />
+          <select 
+            value={this.state.priority}
+            onChange={this.onChangePriority}
+            className='p-2 h-10 w-1/4 px-3 rounded-md text-gray-700 border border-gray-200'
+          >
             <option>Select...</option>
             <option>Low</option>
             <option>Medium</option>
             <option>Urgent</option>
           </select>
-          <div className="form-group">
-            <button type="submit">Save</button>
+          <div className="form-group w-full gap-2 flex justify-center align-middle">
+            <button
+              type="submit"
+              className='w-1/2 h-10 bg-blue-500 hover:bg-blue-400 text-white font-bold py-1.5 border-b-4 border-blue-700 hover:border-blue-500 rounded'
+            >Save</button>
+            <Link to={'/'} className="w-1/2 h-10 bg-blue-500 hover:bg-blue-400 text-white font-bold py-1.5 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+              <button className="w-full">Cancel</button>
+            </Link>
           </div>
         </form>
-        <Link to={'/'}><button>Cancel</button></Link>
       </div>
     )
   }

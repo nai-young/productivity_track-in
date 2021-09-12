@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import '../../styles/pomodoro.css'
-// import '../../styles/app.css'
+import '../../styles/app.css'
 
 import BreakTime from './BreakTime'
 import DurationTime from './DurationTime'
@@ -79,8 +78,8 @@ class Pomodoro extends Component {
 
   render () {
     return (
-      <section className='card-pomodoro relative float-left flex flex-col rounded-lg shadow-lg w-53 h-2/5 bg-gray-50'>
-        <h2>Pomodoro</h2>
+      <section className='card card-pomodoro relative float-left flex flex-col rounded-lg w-53'>
+        <h2>Pomodoro Timer</h2>
         <section className='pomodoro-timer flex justify-between h-full'>
           <DurationTime durationTime={this.state.durationTime} onUpDuration={this.onUpDuration} onDownDuration={this.onDownDuration}/>
           <Timer

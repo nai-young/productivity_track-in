@@ -12,10 +12,10 @@ const TodoList = ({todos, removeTodo }) => {
         todos.map(todo => {
           return (
             <div key={todo._id} className="todo-container flex w-full justify-between py-1">
-              <li onClick={() => removeTodo(todo._id)} className="todo-item w-88 hover:line-through cursor-pointer border border-gray-200 bg-gray-100 rounded-lg p-2 self-center">
+              <li onClick={() => removeTodo(todo._id)} className="todo-item w-4/5 hover:line-through cursor-pointer border border-gray-200 bg-gray-100 rounded-lg p-2 self-center text-gray-700">
                 {todo.title} | {todo.priority}
               </li>
-              <Link to={'/todoedit/' + todo._id } className='w-11'>
+              <Link to={'/todoedit/' + todo._id } className='w-1/6'>
                 <button type="button" className='bg-blue-500 w-full hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Edit</button>
               </Link>
             </div>

@@ -4,6 +4,8 @@ import axios from 'axios'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 
+import '../../styles/app.css'
+
 class Todo extends Component {
   constructor(props) {
     super(props)
@@ -33,8 +35,8 @@ class Todo extends Component {
   render () {
     let { todos } = this.state
     return (
-      <section className='card-todo relative float-right flex flex-col rounded-lg shadow-lg w-45 h-full bg-gray-50'>
-        <h2>To-Do</h2>
+      <section className='card card-todo relative float-right flex flex-col rounded-lg w-45'>
+        <h2>To-Do List</h2>
         <section>
           <AddTodo/>
           <TodoList todos={ todos } removeTodo={ this.removeTodo }/>
