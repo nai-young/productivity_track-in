@@ -68,7 +68,7 @@ export default class Timer extends Component {
   }
   render() {
     return (
-      <section className='session-card shadow-md rounded-md text-center p-2 min-w-30 h-full flex justify-between flex-col align-center'>
+      <section className='session-card shadow-md rounded-md text-center p-2 w-5/12 h-full flex justify-between flex-col align-center'>
           <h3>
             {this.state.session === true ? 'Session' : 'Break'}
           </h3>
@@ -84,9 +84,9 @@ export default class Timer extends Component {
           </span>
         </div>
         <div >
-          <button onClick={this.startTimer} className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Start</button>
-          <button onClick={this.stopTimer} className='stop-btn l-1 mr-1 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Stop</button>
-          <button onClick={this.reloadTimer} className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Reload</button>
+          <button onClick={this.startTimer} className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-5 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Start</button>
+          <button onClick={this.stopTimer} className='stop-btn l-1 mx-1 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-5 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Stop</button>
+          <button onClick={this.reloadTimer} className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-5 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Reload</button>
         </div>
       </section>
     )

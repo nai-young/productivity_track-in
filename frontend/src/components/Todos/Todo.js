@@ -35,7 +35,7 @@ class Todo extends Component {
   render () {
     let { todos } = this.state
     return (
-      <section className='card card-todo relative float-right flex flex-col rounded-lg w-45'>
+      <section className='card card-todo relative float-right flex flex-col rounded-lg w-45 h-50'>
         <h2>To-Do List</h2>
         <section>
           <AddTodo/>

@@ -80,7 +80,7 @@ class Pomodoro extends Component {
     return (
       <section className='card card-pomodoro relative float-left flex flex-col rounded-lg w-53'>
         <h2>Pomodoro Timer</h2>
-        <section className='pomodoro-timer flex justify-between h-full'>
+        <section className='pomodoro-timer flex justify-between h-full mt-4'>
           <DurationTime durationTime={this.state.durationTime} onUpDuration={this.onUpDuration} onDownDuration={this.onDownDuration}/>
           <Timer
             sessionMinutes={this.state.sessionMinutes}

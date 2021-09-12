@@ -24,7 +24,7 @@ class Notes extends Component {
   render () {
     let { notes } = this.state
     return (
-      <section className='card card-notes relative top-5 w-53  flex flex-col rounded-lg'>
+      <section className='card card-notes relative top-5  w-53  flex flex-col rounded-lg'>
         <h2>Notes</h2>
         <AddNote/>
         <ListNotes notes={notes}/>
