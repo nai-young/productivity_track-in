@@ -24,6 +24,8 @@
 > - Calendar tasks & meetings
 >
 > - UI Implementations
+>
+> - Sidebar design optimization
 
 ### 🏠 [Homepage](https://github.com/nai-young/productivity_track-in)
 

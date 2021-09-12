@@ -37,7 +37,6 @@ app.use(express.json())
 // app.use(express.urlencoded({ extended: true }))
 app.use(express.json({ extended: false }))
 
-app.use('/', router)
 app.use('/todos/', todoRouter)
 app.use('/notes/', noteRouter)
 
