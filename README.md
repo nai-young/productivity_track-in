@@ -11,7 +11,7 @@
 
 [![Twitter](https://img.shields.io/twitter/follow/naiche_young.svg?style=social&label=@naiche_young)](https://twitter.com/:naiche_young)
 
-> Productivity All-In One Dashboard - Full Stack Application
+> All-In One Productivity Dashboard - **Full Stack Application**
 >
 > Built with React, Node, MongoDB, Express & TailwindCSS
 >
@@ -22,6 +22,8 @@
 > - Tracking Time
 >
 > - Calendar tasks & meetings
+>
+> - UI Implementations
 
 ### 🏠 [Homepage](https://github.com/nai-young/productivity_track-in)
 

@@ -1,9 +1,10 @@
 const express = require('express')
 const todoRouter = require('../routes/todos')
 const noteRouter = require('../routes/notes')
-const cors = ('cors')
+// const cors = ('cors')
 const path = require('path')
 const app = express()
+const router = express.Router()
 require('dotenv').config()
 
 if (process.env.NODE_ENV === 'production') {
@@ -36,6 +37,7 @@ app.use(express.json())
 // app.use(express.urlencoded({ extended: true }))
 app.use(express.json({ extended: false }))
 
+app.use('/', router)
 app.use('/todos/', todoRouter)
 app.use('/notes/', noteRouter)
 

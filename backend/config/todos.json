@@ -1,8 +1,12 @@
 {
   "todos": [
     {
-      "title": "My Todo",
+      "title": "My First Todo",
       "priority": "Medium"
+    },
+    {
+      "title": "My Second Todo",
+      "priority": "Urgent"
     }
   ]
 }
