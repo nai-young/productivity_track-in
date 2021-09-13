@@ -4,7 +4,6 @@ const noteRouter = require('../routes/notes')
 // const cors = ('cors')
 const path = require('path')
 const app = express()
-const router = express.Router()
 require('dotenv').config()
 
 if (process.env.NODE_ENV === 'production') {
