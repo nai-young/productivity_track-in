@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "frontend": "cd frontend && npm start",
     "backend": "cd backend/bin && nodemon www",
